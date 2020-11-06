@@ -67,7 +67,7 @@ class Stonk:
         self.country = raw.get_property("country")
         self.scope = raw.get_property("scope")
         self.whole = [self.ticker, self.type, self.currency,
-                      self.etf, self.sum, self.country, self.scope]
+                      self.etf, self.sum, self.country, self.scope, f"UPD {time.strftime('%Y-%d-%b %H:%M:%S', time.gmtime())}"]
 
     def __str__(self):
         return f"{self.ticker},{self.type},{self.currency},{self.etf},{self.sum},{self.country},{self.scope}"
