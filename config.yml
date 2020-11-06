@@ -1,0 +1,7 @@
+---
+# Obtain the `token_v2` value by inspecting your browser cookies on a logged-in (non-guest) session on Notion.so
+token: 'some-token'
+stocks: 'some-url'
+flow: 'some-url'
+sheet: 'STONKZ'
+api_token: 'token'
