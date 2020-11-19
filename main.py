@@ -56,6 +56,10 @@ def get_stock_price(ticker):
         print("ERROR: Cannot get correct payload! Got this:")
         print(r.json())
 
+def currency_price(currency):
+    url = f"https://api.exchangeratesapi.io/latest?base={currency}&symbols=RUB"
+    r = requests.get(url)
+    return r.json()["rates"]["RUB"]
 
 class Stonk:
     def __init__(self, raw, portfolio):
@@ -63,7 +67,7 @@ class Stonk:
         self.type = raw.get_property("type")
         self.currency = raw.get_property("currency")
         self.etf = raw.get_property("etf")
-        self.sum = get_stock_price(self.ticker) * portfolio[self.ticker]
+        self.sum = get_stock_price(self.ticker) * portfolio[self.ticker] * currency_price(self.currency)
         self.country = raw.get_property("country")
         self.scope = raw.get_property("scope")
         self.whole = [self.ticker, self.type, self.currency,
