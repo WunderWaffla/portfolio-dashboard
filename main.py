@@ -67,7 +67,7 @@ class Stonk:
         self.type = raw.get_property("type")
         self.currency = raw.get_property("currency")
         self.etf = raw.get_property("etf")
-        self.sum = get_stock_price(self.ticker) * portfolio[self.ticker] * currency_price(raw.get_property("avail")
+        self.sum = get_stock_price(self.ticker) * portfolio[self.ticker] * currency_price(raw.get_property("avail"))
         self.country = raw.get_property("country")
         self.scope = raw.get_property("scope")
         self.whole = [self.ticker, self.type, self.currency,
